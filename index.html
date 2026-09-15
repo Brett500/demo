@@ -5,29 +5,118 @@
     </head>
     <body>
         <a-scene>
-        <a-box
-            position="0 1 -5"
+          <a-sky color="lightblue"></a-sky>   
+                <a-plane position="0 -1 0" height="40" 
+                    width="40" rotation="-90 0 0"
+                    color="green"></a-plane>
+            <!-- background and ground -->        
+           <a-torus color="blue" 
+            arc="360" radius="2" radius-tubular="0.05" position="0 2 -4"
+            animation="property: rotation;
+                from: 0 2 -4;
+                to: 180 2 -4;
+                loop: true;
+                dur: 1600;
+                "
+            ></a-torus>
+            <a-plane
+            position="0 -1 -40" color="blue"
+                    height="40" width="40"
+                   
+                    animation="
+                    property: visible;
+                    from: false;
+                    to: true;
+                    loop: true;
+                    dur: 2000;
+                    dir: alternate;
+                    "
+                     animation__2="
+                    property: opacity;
+                     from: 0.5;
+                     to: 0.51;
+                     dur: 2000;
+                    "
+            ></a-plane>
+            <a-box
+            position="0 0 -4" color="grey" height="0.3" width="1"
+                animation="
+                property: scale;
+                from: 0.3 1 0.3;
+                to: 1 1 0.3;
+                loop: true;
+                dir: alternate;
+                dur: 1000;
+            "
+            
+            ></a-box>
+            <a-dodecahedron position="0 1.5 -4" radius="1.2" color="rgb(255 0 0)"
+            animation="
+                property: color;
+                from: rgb(255, 0, 0);
+                to: rgb(225, 225, 0);
+                loop: true;
+                dur: 1000;
+                dir: alternate;
+            "
+            animation__2="
+            property: position;
+            from: 0 1.5 -4;
+            to: 0 2.5 -4;
+            loop: true;
+            dir: alternate;
+            "
+            
+            ></a-dodecahedron>
+            <a-sphere
+            position="0 2 -4"
             depth="2"
             height="2"
             width="2"
             color="red"
             animation="
                 property: scale;
-                from: 1 1 1;
-                to: 2 2 2;
+                from: .2 .2 .2;
+                to: 1.9 1.9 1.9;
                 loop: true;
                 dir: alternate;
+                dur: 1000;
             "
-            
             animation__2="
-                property: color;
-                from: rgb(255 0 0);
-                to: rgb(225 225 0);
-                loop: true;
-                dir: alternate;
-                dur: 500;
+              property: opacity;
+                from: 1;
+                to: 0.7;
+                dur: 2000;
             "
-            ></a-box>
+            ></a-sphere>
+<a-torus color="blue" 
+            arc="360" radius="2" radius-tubular="0.05" position="0 2 -4"
+            animation="property: rotation;
+                from: 0 2 -4;
+                to: 180 2 -4;
+                loop: true;
+                dur: 1600;
+                "
+            ></a-torus>
+            <a-torus color="blue" 
+            arc="360" radius="2" radius-tubular="0.05" position="0 2 -4"
+            animation="property: rotation;
+                from: 0 2 -4;
+                to: 0 2 180;
+                loop: true;
+                dur: 1600;
+                "
+            ></a-torus>
+            <a-torus color="blue" 
+            arc="360" radius="2" radius-tubular="0.05" position="0 2 -4"
+            animation="property: rotation;
+                from: 0 2 -4;
+                to: 0 180 -4;
+                loop: true;
+                dur: 1000;
+                "
+            ></a-torus>
+            <!-- Make everything go up -->
         </a-scene>
     </body>
 </html>
