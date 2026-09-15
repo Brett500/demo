@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+    </head>
+    <body>
+        <a-scene>
+        <a-box
+            position="0 1 -5"
+            depth="2"
+            height="2"
+            width="2"
+            color="red"
+            animation="
+                property: scale;
+                from: 1 1 1;
+                to: 2 2 2;
+                loop: true;
+                dir: alternate;
+            "
+            
+            animation__2="
+                property: color;
+                from: rgb(255 0 0);
+                to: rgb(225 225 0);
+                loop: true;
+                dir: alternate;
+                dur: 500;
+            "
+            ></a-box>
+        </a-scene>
+    </body>
+</html>
