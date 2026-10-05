@@ -1,122 +1,140 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="https://aframe.io/releases/1.8.0/aframe.min.js"></script>
+        <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
     </head>
     <body>
         <a-scene>
-          <a-sky color="lightblue"></a-sky>   
+            <a-assets>
+                <audio id="Thump" src="https://codehs.com/uploads/3c2e70313b4abc5f283d61687bf281a8" preload="auto"></audio>
+            </a-assets>
+
+              <a-text 
+        value="Score:" 
+        position="-2 4 -3" 
+        color="black" 
+        width="6"
+        font="kelsonsans">
+      </a-text>
+       <a-text 
+        value="0" 
+        position="-1 4 -3" 
+        color="black" 
+        width="6"
+        font="kelsonsans">
+      </a-text>
+ <a-sky color="lightblue"></a-sky>   
                 <a-plane position="0 -1 0" height="40" 
                     width="40" rotation="-90 0 0"
-                    color="green"></a-plane>
-            <!-- background and ground -->        
-           <a-torus color="blue" 
-            arc="360" radius="2" radius-tubular="0.05" position="0 2 -4"
-            animation="property: rotation;
-                from: 0 2 -4;
-                to: 180 2 -4;
-                loop: true;
-                dur: 1600;
-                "
-            ></a-torus>
-            <a-plane
-            position="0 -1 -40" color="blue"
-                    height="40" width="40"
-                   
-                    animation="
-                    property: visible;
-                    from: false;
-                    to: true;
-                    loop: true;
-                    dur: 2000;
-                    dir: alternate;
-                    "
-                     animation__2="
-                    property: opacity;
-                     from: 0.5;
-                     to: 0.51;
-                     dur: 2000;
-                    "
-            ></a-plane>
-            <a-box
-            position="0 0 -4" color="grey" height="0.3" width="1"
-                animation="
-                property: scale;
-                from: 0.3 1 0.3;
-                to: 1 1 0.3;
-                loop: true;
-                dir: alternate;
-                dur: 1000;
-            "
-            
-            ></a-box>
-            <a-dodecahedron position="0 1.5 -4" radius="1.2" color="rgb(255 0 0)"
+                    src="https://static.vecteezy.com/system/resources/thumbnails/057/068/301/small/vibrant-green-grass-field-nature-background-lush-meadow-texture-eco-lawn-leaf-rural-plant-fresh-photo.jpg"></a-plane>
+        
+        <a-torus color="black" 
+            arc="360" radius="1" radius-tubular="0.05" position="0 -1 -4" rotation="-90 0 0"></a-torus>
+             <a-torus color="black" 
+            arc="360" radius="1" radius-tubular="0.05" position="3 -1 -2" rotation="-90 0 0"></a-torus>
+     <a-torus color="black" 
+            arc="360" radius="1" radius-tubular="0.05" position="-3 -1 -2" rotation="-90 0 0"></a-torus>
+            <a-torus color="black" 
+            arc="360" radius="1" radius-tubular="0.05" position="-2 -1 2" rotation="-90 0 0"></a-torus>
+            <a-torus color="black" 
+            arc="360" radius="1" radius-tubular="0.05" position="2 -1 2" rotation="-90 0 0"></a-torus>
+                                    <a-camera>
+                <a-cursor></a-cursor>
+            </a-camera>
+            <a-cylinder
+             position="0 1 -4" width="1" height="2" sound="src: #Thump on: click" rotation="0 180 0" src="https://thumb.ac-illust.com/92/92456d161a197e28cb06318959bd6c52_t.jpeg"
             animation="
-                property: color;
-                from: rgb(255, 0, 0);
-                to: rgb(225, 225, 0);
-                loop: true;
-                dur: 1000;
-                dir: alternate;
-            "
-            animation__2="
             property: position;
-            from: 0 1.5 -4;
-            to: 0 2.5 -4;
+            from: 0 1 -4;
+            to: 0 -2.5 -4;
             loop: true;
             dir: alternate;
             "
-            
-            ></a-dodecahedron>
-            <a-sphere
-            position="0 2 -4"
-            depth="2"
-            height="2"
-            width="2"
-            color="red"
-            animation="
+                          animation__2="
                 property: scale;
-                from: .2 .2 .2;
-                to: 1.9 1.9 1.9;
-                loop: true;
-                dir: alternate;
-                dur: 1000;
+                from: 1 1 1;
+                to: 0 0 0;
+                dur: 100;
+                 startEvents:click;
             "
-            animation__2="
-              property: opacity;
-                from: 1;
-                to: 0.7;
-                dur: 2000;
+            ></a-cylinder>
+            <a-cylinder
+             position="3 1 -2" width="1" height="2" sound="src: #Thump on: click" rotation="0 150 0" src="https://thumb.ac-illust.com/92/92456d161a197e28cb06318959bd6c52_t.jpeg"
+            animation="
+            property: position;
+            from: 3 1 -2;
+            to: 3 -2.5 -2;
+            loop: true;
+            dir: alternate;
+            dur: 800;
             "
-            ></a-sphere>
-<a-torus color="blue" 
-            arc="360" radius="2" radius-tubular="0.05" position="0 2 -4"
-            animation="property: rotation;
-                from: 0 2 -4;
-                to: 180 2 -4;
-                loop: true;
-                dur: 1600;
-                "
-            ></a-torus>
-            <a-torus color="blue" 
-            arc="360" radius="2" radius-tubular="0.05" position="0 2 -4"
-            animation="property: rotation;
-                from: 0 2 -4;
-                to: 0 2 180;
-                loop: true;
-                dur: 1600;
-                "
-            ></a-torus>
-            <a-torus color="blue" 
-            arc="360" radius="2" radius-tubular="0.05" position="0 2 -4"
-            animation="property: rotation;
-                from: 0 2 -4;
-                to: 0 180 -4;
-                loop: true;
-                dur: 1000;
-                "
-            ></a-torus>
-            <!-- Make everything go up -->
-        </a-scene>
+                          animation__2="
+                property: scale;
+                from: 1 1 1;
+                to: 0 0 0;
+                dur: 100;
+                 startEvents:click;
+           
+            "
+            ></a-cylinder>
+                        <a-cylinder
+             position="3 1 -2" width="1" height="2" sound="src: #Thump on: click" rotation="0 190 0" src="https://thumb.ac-illust.com/92/92456d161a197e28cb06318959bd6c52_t.jpeg"
+            animation="
+            property: position;
+            from: -3 1 -2;
+            to: -3 -2.5 -2;
+            loop: true;
+            dir: alternate;
+            dur: 1400;
+            "
+                          animation__2="
+                property: scale;
+                from: 1 1 1;
+                to: 0 0 0;
+                dur: 100;
+                 startEvents:click;
+             
+            "
+            ></a-cylinder>
+             <a-cylinder
+             position="-2 1 2" width="1" height="2" sound="src: #Thump on: click" rotation="0 10 0" src="https://thumb.ac-illust.com/92/92456d161a197e28cb06318959bd6c52_t.jpeg"
+            animation="
+            property: position;
+            from: -2 1 2;
+            to: -2 -2.5 2;
+            loop: true;
+            dir: alternate;
+            dur: 500;
+            "
+                          animation__2="
+                property: scale;
+                from: 1 1 1;
+                to: 0 0 0;
+                dur: 100;
+                 startEvents:click;
+             
+            "
+            ></a-cylinder>
+            <a-cylinder
+             position="2 1 2" width="1" height="2" rotation="0 10 0" sound="src: #Thump on: click" src="https://thumb.ac-illust.com/92/92456d161a197e28cb06318959bd6c52_t.jpeg"
+            animation="
+            property: position;
+            from: 2 1 2;
+            to: 2 -2.5 2;
+            loop: true;
+            dir: alternate;
+            dur: 1700;
+            "
+                          animation__2="
+                property: scale;
+                from: 1 1 1;
+                to: 0 0 0;
+                dur: 100;
+                 startEvents:click;
+              
+            "
+            ></a-cylinder>
+
+    </a-scene>
     </body>
 </html>
