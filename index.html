@@ -19,6 +19,22 @@
         <a-entity
         id="Background" sound= "src: #Background; loop: true; volume: 0.8;"    
         ></a-entity>
+        
+<script>
+      document.addEventListener('DOMContentLoaded', () => {
+      const scene = document.querySelector('a-scene');
+      const music = document.querySelector('#music');
+
+      const startMusic = () => {
+      music.components.sound.playSound();
+    };
+
+    // Fires once on the first user interaction
+    scene.addEventListener('mousemove', startMusic, { once: true });
+    window.addEventListener('touchstart', startMusic, { once: true });
+  });
+</script>
+    
        <a-text 
         value="0" 
         position="-1 4 -3" 
