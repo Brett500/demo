@@ -8,7 +8,9 @@
             <a-assets>
                 <audio id="Thump" src="Thump.mp3" preload="auto"></audio>
             </a-assets>
-
+            <a-assets>
+                <audio id="Background" src="VideoGameMusic.mp3" preload="auto"></audio>
+            </a-assets>
               <a-text 
         value="Score:" 
         position="-2 4 -3" 
@@ -16,6 +18,9 @@
         width="6"
         font="kelsonsans">
       </a-text>
+        <a-entity
+        id="Background" sound= src: #Background loop: true; volume: 0.8;    
+        ></a-entity>
        <a-text 
         value="0" 
         position="-1 4 -3" 
