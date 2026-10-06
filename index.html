@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+        <script src="https://aframe.io/releases/1.8.0/aframe.min.js"></script>
     </head>
     <body>
         <a-scene>
             <a-assets>
-                <audio id="Thump" src="https://codehs.com/uploads/3c2e70313b4abc5f283d61687bf281a8" preload="auto"></audio>
+                <audio id="Thump" src="Thump.mp3" preload="auto"></audio>
             </a-assets>
 
               <a-text 
@@ -43,8 +43,15 @@
             </a-camera>
             <a-cylinder
              position="0 1 -4" width="1" height="2" sound="src: #Thump; on: click; volume 1" rotation="0 180 0" src="https://thumb.ac-illust.com/92/92456d161a197e28cb06318959bd6c52_t.jpeg"
-         
-                          animation="
+         animation="
+         property: position;
+            from: 0 1 -4;
+            to: 0 -2.5 -4;
+            loop: true;
+            dir: alternate;
+            dur: 1100;
+            "
+         animation__2="
                 property: scale;
                 from: 1 1 1;
                 to: 0 0 0;
