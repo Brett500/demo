@@ -1,7 +1,20 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="https://aframe.io/releases/1.8.0/aframe.min.js"></script>
+        <script src="https://aframe.io/releases/1.8.0/aframe.min.js">
+      document.addEventListener('DOMContentLoaded', () => {
+      const scene = document.querySelector('a-scene');
+      const music = document.querySelector('#music');
+
+      const startMusic = () => {
+      music.components.sound.playSound();
+    };
+
+    // Fires once on the first user interaction
+    scene.addEventListener('mousemove', startMusic, { once: true });
+    window.addEventListener('touchstart', startMusic, { once: true });
+  });
+</script>
     </head>
     <body>
         <a-scene>
@@ -20,20 +33,7 @@
         id="Background" sound= "src: #Background; loop: true; volume: 0.8;"    
         ></a-entity>
         
-<script>
-      document.addEventListener('DOMContentLoaded', () => {
-      const scene = document.querySelector('a-scene');
-      const music = document.querySelector('#music');
 
-      const startMusic = () => {
-      music.components.sound.playSound();
-    };
-
-    // Fires once on the first user interaction
-    scene.addEventListener('mousemove', startMusic, { once: true });
-    window.addEventListener('touchstart', startMusic, { once: true });
-  });
-</script>
     
        <a-text 
         value="0" 
